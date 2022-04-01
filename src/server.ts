@@ -4,10 +4,6 @@ import { Server, ServerOptions, Socket } from 'socket.io';
 import { EventNames, EventsMap } from 'socket.io/dist/typed-events';
 import { ExtendedError } from 'socket.io/dist/namespace';
 
-type JSONObject = { [key: string]: JSON };
-type JSONArray = Array<JSON>;
-type JSON = null | string | number | boolean | JSONArray | JSONObject;
-
 export interface Connector<L extends EventsMap, S extends EventsMap> {
     from: <Ev extends EventNames<L>>(eventName: Ev) => Observable<EventParam<L, Ev>[0]>;
     to: <Ev extends EventNames<S>>(eventName: Ev) => Observer<Parameters<S[Ev]>[0]>;
