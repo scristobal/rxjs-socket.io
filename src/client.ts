@@ -1,9 +1,10 @@
 import { fromEvent, Observable, Observer } from 'rxjs';
-import { io as ioClient, ManagerOptions, SocketOptions } from 'socket.io-client';
+import { io as ioClient, ManagerOptions, Socket, SocketOptions } from 'socket.io-client';
 
 export interface Connector {
     from: (eventName: string) => Observable<unknown>;
     to: (eventName: string) => Observer<unknown>;
+    context: { client: Socket };
 }
 
 function fromSocketIOClient(opts?: Partial<ManagerOptions & SocketOptions>): Connector;
@@ -24,7 +25,9 @@ function fromSocketIOClient(
         error: (error: Error) => console.log(error)
     });
 
-    return { from, to };
+    const context = { client };
+
+    return { from, to, context };
 }
 
 export { fromSocketIOClient };
