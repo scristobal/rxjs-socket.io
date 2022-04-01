@@ -1,7 +1,7 @@
 {
-    "name": "@bluepumpkins/rxjs-socketio",
+    "name": "rxio",
     "version": "0.0.1",
-    "description": "A simple RxJS wrapper for Socket.IO that just works",
+    "description": "A simple RxJS wrapper for Socket.IO",
     "main": "build/index.js",
     "type": "module",
     "scripts": {

@@ -1,13 +1,13 @@
-# rxjs-socket.io
+# rxio
 
 A simple RxJS wrapper for Socket.IO
 
 ## Basic example
 
-The following example is the same as in Socket.IO [welcome page](https://socket.io/)
+The following example is taken from [Socket.IO](https://socket.io/)
 
 ```typescript
-import { fromSocketIOServer } from 'rxjs-socket.io';
+import { fromSocketIOServer } from 'rxio';
 
 const connection$ = fromSocketIOServer(3000);
 
@@ -18,7 +18,7 @@ connection$.subscribe(({ from, to }) => {
 ```
 
 ```typescript
-import { fromSocketIOClient } from 'rxjs-socket.io';
+import { fromSocketIOClient } from 'rxio';
 
 const { from, to } = fromSocketIOClient('ws://localhost:3000');
 
@@ -28,4 +28,4 @@ to('howdy').next('stranger');
 
 ## Disclaimer
 
-This library is still under development, many functionalities are missing and the public API is not yet stable.
+This library is still in the early development phase, many functionalities are missing and the public API is not yet stable.
