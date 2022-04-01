@@ -1,0 +1,12 @@
+{
+    "MD007": {
+        "indent": 4
+    },
+    "MD013": {
+        "line_length": 180
+    },
+    "MD030": {
+        "ul_single": 3,
+        "ul_multi": 3
+    }
+}
