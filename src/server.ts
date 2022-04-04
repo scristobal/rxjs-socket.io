@@ -22,8 +22,13 @@ function fromSocketIOServer<L extends EventsMap, S extends EventsMap>(
     opts?: Partial<ServerOptions>
 ): Observable<Connector<L, S>>;
 function fromSocketIOServer<L extends EventsMap, S extends EventsMap>(
-    srv?: http.Server | number,
+    srv: http.Server | number,
     opts?: Partial<ServerOptions>
+): Observable<Connector<L, S>>;
+function fromSocketIOServer<L extends EventsMap, S extends EventsMap>(
+    srv: http.Server | number,
+    opts: Partial<ServerOptions>,
+    middleware?: (socket: Socket, next: (err?: ExtendedError) => void) => void
 ): Observable<Connector<L, S>>;
 function fromSocketIOServer<L extends EventsMap, S extends EventsMap>(
     srv?: undefined | Partial<ServerOptions> | http.Server | number,
